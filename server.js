@@ -1,6 +1,7 @@
 var mongoose = require('mongoose'),
 	config = require('./configs/dataSource'),
 	loadMarkets = require('./controllers/market'),
+	uriUtil = require('mongodb-uri'),
 	xlsxj = require("xlsx-to-json");
 
 var server = config['market'].database.server,
@@ -8,7 +9,10 @@ var server = config['market'].database.server,
 	dbName = config['market'].database.name,
 	connectionString = "mongodb://" + server + ":" + port + "/" + dbName;
 
-var conn = mongoose.connect(connectionString);
+var mongodbUri = 'mongodb://drtuser:Go*4@ds031942.mongolab.com:31942/farmersmarkets';
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+var conn = mongoose.connect(mongooseUri);
 
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 mongoose.connection.once('open', function callback() {

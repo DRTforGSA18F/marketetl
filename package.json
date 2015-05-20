@@ -6,6 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "mongoose": "~3.8.24",
-    "xlsx-to-json": "~0.2.3"
+    "xlsx-to-json": "~0.2.3",
+    "mongodb-uri": "~0.9.7"
   }
 }
