@@ -19,7 +19,7 @@ function loadMarkets(conn) {
 			var item = marketDataList[key];
 
 			var marketDocument = new marketModel({
-				_id: item._id.toString(),
+				_id: item.FMID.toString(),
 				name: item.MarketName.toString(),
 
 				website: item.Website.toString(),
@@ -70,7 +70,7 @@ function loadMarkets(conn) {
 				
 				Location : [{
 					"type": "Point",
-					"coordinates": [parseFloat(item.lng.toString()), parseFloat(item.lat.toString())]
+					"coordinates": [(item.x.toString() !== "") ? parseFloat(item.x.toString()) : 0, (item.x.toString() !== "") ? parseFloat(item.y.toString()) : 0]
 				}]
 
 			});
@@ -80,7 +80,7 @@ function loadMarkets(conn) {
 					console.log(err);
 					process.exit(1);
 				} else {
-					console.log(marketDocument._id + " saved");
+					console.log('loaded ' + this.emitted.complete[0]._id);
 				}
 			});
 		}
