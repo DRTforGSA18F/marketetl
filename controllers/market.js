@@ -68,10 +68,10 @@ function loadMarkets(conn) {
 
 				updateTime: item.updateTime.toString(),
 				
-				Location : [{
+				location : {
 					"type": "Point",
 					"coordinates": [(item.x.toString() !== "") ? parseFloat(item.x.toString()) : 0, (item.x.toString() !== "") ? parseFloat(item.y.toString()) : 0]
-				}]
+				}
 
 			});
 
