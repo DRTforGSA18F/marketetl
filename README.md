@@ -1,3 +1,3 @@
-# Maret ETL
+# Market ETL
 
 ### Clone, Install Dependencies and Execute via 'node server'
