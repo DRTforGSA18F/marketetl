@@ -1,0 +1,12 @@
+{
+  "name": "MarketETL",
+  "version": "0.1.0",
+  "description": "data load module for farmers market data",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mongoose": "~3.8.24",
+    "xlsx-to-json": "~0.2.3",
+    "mongodb-uri": "~0.9.7"
+  }
+}
