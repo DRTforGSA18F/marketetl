@@ -59,11 +59,11 @@ var market = new mongoose.Schema({
 
 	updateTime: String,
 
-	Location: [location]
+	location: {}
 });
 
 market.index({
-	'Location': '2dsphere'
+	'location': '2dsphere'
 })
 
 module.exports = market;
